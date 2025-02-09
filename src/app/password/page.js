@@ -13,13 +13,11 @@ const PasswordManager = () => {
     password: ''
   });
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-
   // Fetch data from the API when the component mounts
   useEffect(() => {
     const fetchPasswords = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/password`);
+        const response = await axios.get('https://minor-project-oe6arjltz-cybersparkxs-projects.vercel.app//api/password');
         setPasswords(response.data); // Assuming the API returns an array of passwords
         setLoading(false);
       } catch (err) {
@@ -29,7 +27,7 @@ const PasswordManager = () => {
     };
 
     fetchPasswords();
-  }, [API_BASE_URL]);
+  }, []);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -46,7 +44,7 @@ const PasswordManager = () => {
 
   const addPassword = async () => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/password`, newPassword);
+      const response = await axios.post('https://minor-project-oe6arjltz-cybersparkxs-projects.vercel.app//api/password', newPassword);
       setPasswords((prevPasswords) => [...prevPasswords, response.data]);
       setNewPassword({ website: '', username: '', password: '' });
       closeModal();
@@ -58,7 +56,7 @@ const PasswordManager = () => {
   const handleDeletePassword = async (id) => {
     try {
       // Send DELETE request to the backend to delete the specific password
-      const response = await axios.delete(`${API_BASE_URL}/api/password?id=${id}`);
+      const response = await axios.delete(`https://minor-project-oe6arjltz-cybersparkxs-projects.vercel.app//api/password?id=${id}`);
 
       // Check if the password was successfully deleted
       if (response.data.message === 'Password deleted successfully') {
