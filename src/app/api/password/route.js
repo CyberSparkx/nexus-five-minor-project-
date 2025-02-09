@@ -37,15 +37,25 @@ async function connectToDatabase() {
   return mongoose.connection.db;
 }
 
+// Helper function to add CORS headers
+function addCorsHeaders(response) {
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  return response;
+}
+
 // GET method to return the list of passwords
 export async function GET() {
   try {
     await connectToDatabase();
     const passwords = await Password.find({});
-    return NextResponse.json(passwords);
+    const response = NextResponse.json(passwords);
+    return addCorsHeaders(response);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to fetch passwords' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to fetch passwords' }, { status: 500 });
+    return addCorsHeaders(response);
   }
 }
 
@@ -56,20 +66,23 @@ export async function POST(request) {
     const { website, username, password } = body;
 
     if (!website || !username || !password) {
-      return NextResponse.json(
+      const response = NextResponse.json(
         { error: 'Website, username, and password are required' },
         { status: 400 }
       );
+      return addCorsHeaders(response);
     }
 
     await connectToDatabase();
     const newPassword = new Password({ website, username, password });
     const savedPassword = await newPassword.save();
 
-    return NextResponse.json(savedPassword, { status: 201 });
+    const response = NextResponse.json(savedPassword, { status: 201 });
+    return addCorsHeaders(response);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to add password' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to add password' }, { status: 500 });
+    return addCorsHeaders(response);
   }
 }
 
@@ -80,12 +93,14 @@ export async function DELETE(request) {
     const passwordId = url.searchParams.get('id');
 
     if (!passwordId) {
-      return NextResponse.json({ error: 'Invalid password ID' }, { status: 400 });
+      const response = NextResponse.json({ error: 'Invalid password ID' }, { status: 400 });
+      return addCorsHeaders(response);
     }
 
     // Ensure that passwordId is a valid ObjectId
     if (!mongoose.Types.ObjectId.isValid(passwordId)) {
-      return NextResponse.json({ error: 'Invalid ObjectId format' }, { status: 400 });
+      const response = NextResponse.json({ error: 'Invalid ObjectId format' }, { status: 400 });
+      return addCorsHeaders(response);
     }
 
     await connectToDatabase();
@@ -94,12 +109,21 @@ export async function DELETE(request) {
     const result = await Password.deleteOne({ _id: new mongoose.Types.ObjectId(passwordId) });
 
     if (result.deletedCount === 1) {
-      return NextResponse.json({ message: 'Password deleted successfully' });
+      const response = NextResponse.json({ message: 'Password deleted successfully' });
+      return addCorsHeaders(response);
     } else {
-      return NextResponse.json({ error: 'Password not found' }, { status: 404 });
+      const response = NextResponse.json({ error: 'Password not found' }, { status: 404 });
+      return addCorsHeaders(response);
     }
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to delete password' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to delete password' }, { status: 500 });
+    return addCorsHeaders(response);
   }
+}
+
+// OPTIONS method to handle preflight requests
+export async function OPTIONS() {
+  const response = NextResponse.json({});
+  return addCorsHeaders(response);
 }

@@ -33,15 +33,25 @@ async function connectToDatabase() {
   return mongoose.connection.db;
 }
 
+// Helper function to add CORS headers
+function addCorsHeaders(response) {
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  return response;
+}
+
 // GET method to return the list of notes
 export async function GET() {
   try {
     await connectToDatabase();
     const notes = await Note.find({});
-    return NextResponse.json(notes);
+    const response = NextResponse.json(notes);
+    return addCorsHeaders(response);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to fetch notes' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to fetch notes' }, { status: 500 });
+    return addCorsHeaders(response);
   }
 }
 
@@ -52,20 +62,23 @@ export async function POST(request) {
     const { title, description } = body;
 
     if (!title || !description) {
-      return NextResponse.json(
+      const response = NextResponse.json(
         { error: 'Title and description are required' },
         { status: 400 }
       );
+      return addCorsHeaders(response);
     }
 
     await connectToDatabase();
     const newNote = new Note({ title, description });
     const savedNote = await newNote.save();
 
-    return NextResponse.json(savedNote, { status: 201 });
+    const response = NextResponse.json(savedNote, { status: 201 });
+    return addCorsHeaders(response);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to add note' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to add note' }, { status: 500 });
+    return addCorsHeaders(response);
   }
 }
 
@@ -76,12 +89,14 @@ export async function DELETE(request) {
     const noteId = url.searchParams.get('id');
 
     if (!noteId) {
-      return NextResponse.json({ error: 'Invalid note ID' }, { status: 400 });
+      const response = NextResponse.json({ error: 'Invalid note ID' }, { status: 400 });
+      return addCorsHeaders(response);
     }
 
     // Ensure that noteId is a valid ObjectId
     if (!mongoose.Types.ObjectId.isValid(noteId)) {
-      return NextResponse.json({ error: 'Invalid ObjectId format' }, { status: 400 });
+      const response = NextResponse.json({ error: 'Invalid ObjectId format' }, { status: 400 });
+      return addCorsHeaders(response);
     }
 
     await connectToDatabase();
@@ -90,12 +105,21 @@ export async function DELETE(request) {
     const result = await Note.deleteOne({ _id: new mongoose.Types.ObjectId(noteId) });
 
     if (result.deletedCount === 1) {
-      return NextResponse.json({ message: 'Note deleted successfully' });
+      const response = NextResponse.json({ message: 'Note deleted successfully' });
+      return addCorsHeaders(response);
     } else {
-      return NextResponse.json({ error: 'Note not found' }, { status: 404 });
+      const response = NextResponse.json({ error: 'Note not found' }, { status: 404 });
+      return addCorsHeaders(response);
     }
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to delete note' }, { status: 500 });
+    const response = NextResponse.json({ error: 'Failed to delete note' }, { status: 500 });
+    return addCorsHeaders(response);
   }
+}
+
+// OPTIONS method to handle preflight requests
+export async function OPTIONS() {
+  const response = NextResponse.json({});
+  return addCorsHeaders(response);
 }
