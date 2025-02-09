@@ -17,7 +17,7 @@ const PasswordManager = () => {
   useEffect(() => {
     const fetchPasswords = async () => {
       try {
-        const response = await axios.get('https://minor-project-oe6arjltz-cybersparkxs-projects.vercel.app/api/password');
+        const response = await axios.get('https://minor-project-n5m6836rl-cybersparkxs-projects.vercel.app/api/password');
         setPasswords(response.data); // Assuming the API returns an array of passwords
         setLoading(false);
       } catch (err) {
