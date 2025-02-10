@@ -120,9 +120,14 @@ const DepartmentPage = () => {
       </header>
 
       {/* Introduction Section */}
-      <section className="intro lg:h-[80vh] flex flex-col justify-center items-center text-center py-20" id="about">
-        <h2 className="text-4xl font-semibold mb-6">Welcome to the Department of Computer Science & Engineering</h2>
+      <section className="intro  lg:h-[80vh] flex flex-col justify-center items-center text-center py-20" id="about">
+      
+      
+       <h2 className="text-4xl font-semibold mb-6">Welcome to the Department of Computer Science & Engineering</h2>
         <p className="text-lg max-w-4xl mx-auto">We provide world-class education in computer science, with a focus on innovation, research, and hands-on learning. Our department is dedicated to empowering students to excel in the ever-evolving tech world.</p>
+
+       
+
       </section>
 
       {/* Department Features Section */}

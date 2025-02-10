@@ -15,9 +15,9 @@ const Nav = () => {
   };
 
   return (
-    <div>
+    <div >
   <div>
-      <nav className='flex  bg-fixed  justify-between bg-white items-center px-8 shadow-md h-[8vh] w-full'>
+      <nav className='flex  justify-between bg-white items-center px-8 shadow-md h-[8vh] w-full'>
         <Link href='/'  id="right" className='cursor-pointer'>
           <Image
             src="/logo.jpg"
@@ -44,6 +44,7 @@ const Nav = () => {
           <Link href='/cst'><li>CST Page</li></Link>
           <Link href='/notes'><li>Notes Manager</li></Link>
           <Link href='/password'><li>Password Manager</li></Link>
+          <Link href='/chatbot'><li>Go to Chatbot</li></Link>
         </ul>
       </div>
     </div>
