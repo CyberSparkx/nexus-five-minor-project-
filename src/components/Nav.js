@@ -45,6 +45,7 @@ const Nav = () => {
           <Link href='/notes'><li>Notes Manager</li></Link>
           <Link href='/password'><li>Password Manager</li></Link>
           <Link href='/chatbot'><li>Go to Chatbot</li></Link>
+          <Link href='/team'><li>Our Team</li></Link>
         </ul>
       </div>
     </div>
