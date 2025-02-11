@@ -1,9 +1,6 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import Image from 'next/image';
 import axios from 'axios';
 
 export default function Home() {

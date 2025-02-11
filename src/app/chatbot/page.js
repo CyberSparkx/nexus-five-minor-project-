@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 
 // Replace with  Gemini API key
 // ai api ta testing ar jonno chilo aita delete kore dichi
-const apiKey = 'AIzaSyAAneKv1jNMdElIxG0PgxDqKVlQLnmuiyA'; // Replace with your actual Gemini API key
+const API = process.env.NEXT_PUBLIC_GEMINI_API;
+
+const apiKey = API; // Replace with your actual Gemini API key
 
 const App = () => {
   const [userInput, setUserInput] = useState('');

@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import mongoose from 'mongoose';
 
+const db = process.env.NEXT_PUBLIC_MONGO_DB_URI;
 // MongoDB connection URI
-const uri = "mongodb+srv://narenroy:Japan555@cluster1.hjgpm.mongodb.net/";
+const uri = db;
 
 // Mongoose schema for Project
 const projectSchema = new mongoose.Schema(
