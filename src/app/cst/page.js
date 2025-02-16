@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Loading from '@/components/Loading';
+import Nav from '@/components/Nav';
 
 
 // Register ScrollTrigger plugin
@@ -98,6 +100,8 @@ const DepartmentPage = () => {
 
   return (
     <div className="bg-gray-900 text-white">
+      <Nav/>
+      <Loading/>
       
       {/* Header */}
       <header className=" top-0 left-0 w-full bg-gray-800 p-5 shadow-md z-50">

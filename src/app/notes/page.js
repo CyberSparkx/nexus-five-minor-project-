@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loading from '@/components/Loading';
+import Nav from '@/components/Nav';
 
 const NotesApp = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,6 +70,8 @@ const NotesApp = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
+      <Nav/>
+      <Loading/>
       {/* Header */}
       <header className="w-full py-5 px-8 bg-gray-900 shadow-md z-10">
         <div className="flex justify-between items-center">

@@ -1,5 +1,7 @@
 "use client"
 
+import Loading from '@/components/Loading';
+import Nav from '@/components/Nav';
 import React, { useState } from 'react';
 
 // Replace with  Gemini API key
@@ -80,6 +82,8 @@ const App = () => {
 
   return (
     <div  className='overflow-hidden'>
+      <Nav/>
+      <Loading/>
       <div style={styles.titleBar}>
         <div style={styles.title}>AI Chat Assistant</div>
       </div>

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loading from '@/components/Loading';
+import Nav from '@/components/Nav';
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -28,6 +30,8 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center">
+      <Nav/>
+      <Loading/>
       {/* Header */}
       <header className="py-16 text-center">
         <h1 className="text-5xl font-semibold text-gray-900">Welcome To Our Minor Project</h1>

@@ -1,18 +1,24 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 
 const Nav = () => {
-
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(()=>{
+      setIsOpen(false)
+  }, [])
+  
 
   // Toggle the side panel visibility
   const toggleSidePanel = () => {
     setIsOpen(!isOpen);
   };
+
+
 
   return (
     <div >
