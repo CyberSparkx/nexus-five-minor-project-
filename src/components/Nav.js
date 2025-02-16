@@ -21,7 +21,7 @@ const Nav = () => {
 
 
   return (
-    <div >
+    <div className='z-20' >
   <div>
       <nav className='flex  justify-between bg-white items-center px-8 shadow-md h-[8vh] w-full'>
         <Link href='/'  id="right" className='cursor-pointer'>

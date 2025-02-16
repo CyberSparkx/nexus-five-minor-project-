@@ -21,7 +21,7 @@ const PasswordManager = () => {
   useEffect(() => {
     const fetchPasswords = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/password`);
+        const response = await axios.get(`/api/password`);
         setPasswords(response.data); // Assuming the API returns an array of passwords
         setLoading(false);
       } catch (err) {
@@ -48,7 +48,7 @@ const PasswordManager = () => {
 
   const addPassword = async () => {
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/password`, newPassword);
+      const response = await axios.post(`/api/password`, newPassword);
       setPasswords((prevPasswords) => [...prevPasswords, response.data]);
       setNewPassword({ website: '', username: '', password: '' });
       closeModal();
@@ -60,7 +60,7 @@ const PasswordManager = () => {
   const handleDeletePassword = async (id) => {
     try {
       // Send DELETE request to the backend to delete the specific password
-      const response = await axios.delete(`${API_BASE_URL}/api/password?id=${id}`);
+      const response = await axios.delete(`/api/password?id=${id}`);
 
       // Check if the password was successfully deleted
       if (response.data.message === 'Password deleted successfully') {

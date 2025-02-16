@@ -29,16 +29,19 @@ export default function Home() {
   ];
 
   return (
+   <>
+    <Nav/>
     <div className="bg-gray-50 min-h-screen flex flex-col items-center">
-      <Nav/>
       <Loading/>
       {/* Header */}
       <header className="py-16 text-center">
+      
         <h1 className="text-5xl font-semibold text-gray-900">Welcome To Our Minor Project</h1>
       </header>
 
       {/* Team Section */}
       <section className="w-full bg-gray-100 py-16">
+        
         <h2 className="text-3xl font-semibold text-center text-gray-900">Meet Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mt-8">
           {teamMembers.map((member, index) => (
@@ -79,6 +82,6 @@ export default function Home() {
           <a href="https://x.com/NarenRo26790356" target="_blank" className="text-gray-400 hover:text-white">X.com</a>
         </div>
       </footer>
-    </div>
+    </div></>
   );
 }

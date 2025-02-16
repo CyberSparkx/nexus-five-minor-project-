@@ -18,7 +18,7 @@ const NotesApp = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/notes`);
+        const response = await axios.get(`/api/notes`);
         setNotes(response.data); // Assuming the API returns an array of notes
         setLoading(false);
       } catch (err) {
@@ -42,7 +42,7 @@ const NotesApp = () => {
     const newNote = { title: newNoteTitle, description: newNoteDescription };
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/notes`, newNote);
+      const response = await axios.post(`/api/notes`, newNote);
       setNotes((prevNotes) => [...prevNotes, response.data]);
       setNewNoteTitle('');
       setNewNoteDescription('');
@@ -55,7 +55,7 @@ const NotesApp = () => {
   const handleDeleteNote = async (id) => {
     try {
       // Send DELETE request to the backend to delete the specific note
-      const response = await axios.delete(`${API_BASE_URL}/api/notes?id=${id}`);
+      const response = await axios.delete(`/api/notes?id=${id}`);
 
       // Check if the note was successfully deleted
       if (response.data.message === 'Note deleted successfully') {
