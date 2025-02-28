@@ -10,7 +10,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <div  className='overflow-x-hidden'>
+
       <Nav/>
         <Slider/>
         <Loading/>
@@ -19,6 +20,7 @@ const Home = () => {
         <Departments/>
         <PhotoSGP/>
         <Footer/>
+        
     </div>
   )
 }

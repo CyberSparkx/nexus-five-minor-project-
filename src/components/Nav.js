@@ -44,7 +44,7 @@ const Nav = () => {
       
       {/* Side panel with dynamic visibility */}
       <div 
-        className={`w-[60vw] ${isOpen ? 'absolute z-20 ml-[40vw]' : 'hidden'} h-screen bg-zinc-700 z-15 transition-all duration-300`}
+        className={`w-[60vw] ${isOpen ? 'absolute z-20 ml-[40vw]' : 'hidden'} h-screen bg-zinc-900 z-15 transition-all duration-300`}
       >
         <ul className='text-xl text-white font-semibold flex flex-col gap-5 items-center mx-auto py-10 cursor-pointer'>
           <Link href='/cst'><li>CST Page</li></Link>

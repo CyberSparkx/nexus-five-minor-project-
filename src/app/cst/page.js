@@ -139,7 +139,7 @@ const DepartmentPage = () => {
         <h2 className="text-4xl font-semibold text-center mb-12">Our Department Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
           <div className="feature-item bg-gray-700 p-8 rounded-lg shadow-lg text-center">
-            <img src="https://images.unsplash.com/photo-1738447429433-69e3ecd0bdd0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lab 1" className="w-full h-48 object-cover rounded-lg mb-6"/>
+            <img src="https://plus.unsplash.com/premium_photo-1691784080844-8300ab4c6790?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lab 1" className="w-full h-48 object-cover rounded-lg mb-6"/>
             <h3 className="text-2xl font-semibold">Advanced Computing Lab</h3>
             <p className="text-sm mt-2">A state-of-the-art lab for advanced research in computing technologies.</p>
           </div>
@@ -161,14 +161,14 @@ const DepartmentPage = () => {
         <h2 className="text-4xl font-semibold text-center mb-12">Meet Our Faculty</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
           <div className="teacher bg-gray-700 p-8 rounded-lg shadow-lg text-center">
-            <img src="https://images.unsplash.com/photo-1659301254614-8d6a9d46f26a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Professor 1" className="w-40 h-40 rounded-full mx-auto mb-6"/>
-            <h3 className="text-2xl font-semibold">Dr. John Doe</h3>
-            <p className="text-sm mt-2">Specializes in Artificial Intelligence and Machine Learning.</p>
+            <img src="anirbanSir.jpg" alt="Professor 1" className="w-40 h-40 rounded-full mx-auto mb-6"/>
+            <h3 className="text-2xl font-semibold">Anirban Seal</h3>
+            <p className="text-sm mt-2">HOD CST Department</p>
           </div>
           <div className="teacher bg-gray-700 p-8 rounded-lg shadow-lg text-center">
-            <img src="https://images.unsplash.com/photo-1605711285791-0219e80e43a3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Professor 2" className="w-40 h-40 rounded-full mx-auto mb-6"/>
-            <h3 className="text-2xl font-semibold">Dr. Jane Smith</h3>
-            <p className="text-sm mt-2">Expert in Software Engineering and Computer Networks.</p>
+            <img src="debrajSir.jpg" alt="Professor 2" className="w-40 h-40 rounded-full mx-auto mb-6"/>
+            <h3 className="text-2xl font-semibold">Debraj Sir</h3>
+            <p className="text-sm mt-2">Lecturer at CST Department</p>
           </div>
           <div className="teacher bg-gray-700 p-8 rounded-lg shadow-lg text-center">
             <img src="https://images.unsplash.com/photo-1587691592099-24045742c181?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Professor 3" className="w-40 h-40 rounded-full mx-auto mb-6"/>
@@ -183,13 +183,22 @@ const DepartmentPage = () => {
         <h2 className="text-4xl font-semibold text-center mb-12">Department Photos</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
           <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
-            <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo 1" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+            <img src="cc lab.jpg" alt="Photo 1" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
           </div>
           <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
-            <img src="https://images.unsplash.com/photo-1567168544999-b8ca00a3d9c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo 2" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+            <img src="campus2.jpg" alt="Photo 2" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
           </div>
           <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
-            <img src="https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo 3" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+            <img src="anirbanSir.jpg" alt="Photo 3" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+          </div>
+          <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
+            <img src="award.jpg" alt="Photo 3" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+          </div>
+          <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
+            <img src="cc room.jpg" alt="Photo 3" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
+          </div>
+          <div className="photo-item bg-gray-700 p-4 rounded-lg overflow-hidden shadow-lg">
+            <img src="debrajSir 2.jpg" alt="Photo 3" className="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105"/>
           </div>
         </div>
       </section>

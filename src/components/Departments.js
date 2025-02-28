@@ -14,7 +14,7 @@ const departments = [
 const Departments = () => {
   return (
     <div className='mt-10'>
-        <h1 className='text-5xl font-semibold mx-auto  w-[67vw]'>Departments</h1>
+        <h1 className='text-5xl font-semibold mx-auto  w-[19vw]'>Departments</h1>
 
         <div>
         <div className="container mx-auto px-6 py-12">
